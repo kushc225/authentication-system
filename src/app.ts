@@ -9,17 +9,17 @@ import cors from 'cors'
 import cookieParser from 'cookie-parser'
 
 const app: Application = express()
-
+const corsOptions = {
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
+    origin: ['http://localhost:4200'],
+    allowedHeaders: ['Content-Type', 'Authorization'],
+    credentials: true
+}
 // Middleware
 app.use(helmet())
 app.use(cookieParser())
-app.use(
-    cors({
-        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS', 'HEAD'],
-        origin: ['https://client.com'],
-        credentials: true
-    })
-)
+
+app.use(cors(corsOptions))
 app.use(express.json())
 app.use(express.static(path.join(__dirname, '../', 'public')))
 

@@ -278,14 +278,14 @@ export default {
             res.cookie('accessToken', accessToken, {
                 path: '/api/v1',
                 domain: DOMAIN,
-                sameSite: 'strict',
+                sameSite: 'lax',
                 maxAge: 1000 * config.ACCESS_TOKEN.EXPIRY,
                 httpOnly: true,
                 secure: !(config.ENV === EApplicationEnvironment.DEVELOPMENT)
             }).cookie('refreshToken', refreshToken, {
                 path: '/api/v1',
                 domain: DOMAIN,
-                sameSite: 'strict',
+                sameSite: 'lax',
                 maxAge: 1000 * config.REFRESH_TOKEN.EXPIRY,
                 httpOnly: true,
                 secure: !(config.ENV === EApplicationEnvironment.DEVELOPMENT)
