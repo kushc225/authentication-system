@@ -13,5 +13,6 @@ export default {
     EXPIRED_URL: `Your password reset url is expired`,
     INVALID_REQUEST: `Invalid request`,
     INVALID_OLD_PASSWORD: `Invalid old password`,
-    PASSWORD_MATCHING_WITH_OLD_PASSWORD: `Password matching with old password`
+    PASSWORD_MATCHING_WITH_OLD_PASSWORD: `Password matching with old password`,
+    SKUID_ALREADY_EXISTS : 'SKU id already exists'
 }

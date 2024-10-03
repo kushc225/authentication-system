@@ -1,12 +1,13 @@
 import express, { Application, NextFunction, Request, Response } from 'express'
 import path from 'path'
-import router from './router/apiRouter'
 import globalErrorHandler from './middleware/globalErrorHandler'
 import responseMessage from './constant/responseMessage'
 import httpError from './util/httpError'
 import helmet from 'helmet'
 import cors from 'cors'
 import cookieParser from 'cookie-parser'
+import userRoute from './router/userRoute'
+import productRoute from './router/productRoute'
 
 const app: Application = express()
 const corsOptions = {
@@ -24,7 +25,8 @@ app.use(express.json())
 app.use(express.static(path.join(__dirname, '../', 'public')))
 
 // Routes
-app.use('/api/v1', router)
+app.use('/api/v1/user', userRoute)
+app.use('/api/v1/products', productRoute)
 
 // 404 Handler
 app.use((req: Request, _: Response, next: NextFunction) => {

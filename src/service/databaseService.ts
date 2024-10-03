@@ -3,6 +3,7 @@ import config from '../config/config'
 import userModel from '../model/userModel'
 import { IRefreshToken, IUser } from '../types/userTypes'
 import refreshTokenModel from '../model/refreshTokenModel'
+import { ProductModel } from '../model/productModel'
 
 export default {
     connect: async () => {
@@ -45,5 +46,8 @@ export default {
     },
     findRefreshToken: (token: string) => {
         return refreshTokenModel.findOne({ token })
+    },
+    findSKUId: (id: string) => {
+        return ProductModel.findOne({ SKU : id })
     }
 }

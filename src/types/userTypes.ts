@@ -24,7 +24,7 @@ export interface IUser {
         expiry: number | null
         lastResetAt: Date | null
     },
-    address : IUserAddress,
+    address? : IUserAddress,
     lastLoginAt: Date | null
     consent: boolean
 }

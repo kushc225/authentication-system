@@ -47,4 +47,4 @@ const productSchema = new Schema<IProduct>({
   deleted_at: { type: Date }
 });
 
-export const Product = model<IProduct>('Product', productSchema);
+export const ProductModel = model<IProduct>('Product', productSchema);
