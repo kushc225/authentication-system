@@ -1,3 +1,4 @@
+import { IUserAddress } from './../model/userAddressModel';
 import { JwtPayload } from 'jsonwebtoken'
 import { EUserRole } from '../constant/userConstant'
 
@@ -22,7 +23,8 @@ export interface IUser {
         token: string | null
         expiry: number | null
         lastResetAt: Date | null
-    }
+    },
+    address : IUserAddress,
     lastLoginAt: Date | null
     consent: boolean
 }

@@ -1,4 +1,4 @@
-import mongoose from 'mongoose'
+import mongoose, { Schema } from 'mongoose'
 import { IUser } from '../types/userTypes'
 import { EUserRole } from '../constant/userConstant'
 
@@ -88,7 +88,12 @@ const userSchema = new mongoose.Schema<IUser>(
         consent: {
             type: Boolean,
             required: true
-        }
+        },
+        address: [{
+            type: Schema.Types.ObjectId,
+            ref: 'Address', // Name of the Address model
+            required: true
+        }]
     },
     { timestamps: true }
 )
